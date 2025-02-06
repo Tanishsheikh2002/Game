@@ -1,0 +1,141 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(0deg, #c800c8, #6921ea); 
+}
+
+.container {
+    text-align: center;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 20px;
+    padding: 40px 25px;
+    border-radius: 15px;
+    background-color: #0000008f;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff4a;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+    .cell.x {
+        background-clip: text;
+        color: red; 
+        font-weight: bold; 
+        font-size: 3rem;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+        background: linear-gradient(90deg, #ff416c, #ff4b2b);
+        -webkit-background-clip: text; /* Clip the background to the text */
+        -webkit-text-fill-color: transparent; 
+        transition: transform 0.2s ease-in-out; 
+    }
+    
+    .cell.x:hover {
+        transform: scale(1.2); 
+    }    
+
+    .cell.o {
+        background-clip: text;
+        color: blue;
+        font-weight: bold; 
+        font-size: 3rem; 
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        background: linear-gradient(to right, #00c6ff, #0072ff); 
+        -webkit-background-clip: text; /* Clip the background to the text */
+        -webkit-text-fill-color: transparent; 
+        transition: transform 0.2s ease-in-out; 
+    }
+    
+    .cell.o:hover {
+        transform: scale(1.2); 
+    }
+    
+
+
+#winning-message {
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+#winning-message.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+button {
+    margin-top: 30px;
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    font-weight: bold; 
+    cursor: pointer;
+    background-color: #0000008f;
+    border-style: none;
+    border-radius: 20px;
+    transition: transform 0.4s ease-in-out; 
+}
+button:hover{
+    transform: scale(1.1);
+}
+
+#line {
+    position: absolute;
+    background-color: #ff0000; /* Red color for the line */
+    height: 5px; /* Thickness of the line */
+    width: 300px; /* Adjust based on your board size */
+    transform-origin: center;
+    transition: all 0.4s ease-in-out;
+}
+
+@media(max-width:650px){
+    #game-board {
+        display: grid;
+        grid-template-columns: repeat(3, 50px);
+        grid-template-rows: repeat(3, 50px);
+        gap: 30px;
+        padding: 20px 12px;
+        border-radius: 15px;
+        background-color: #0000008f;
+    }
+    .cell {
+        width: 50px;
+        height: 50px;
+        border-radius: 20px;
+    }
+    .cell.x {
+        font-size: 2rem; 
+    }
+    .cell.o {
+        font-size: 2rem; 
+    }
+    button {
+        margin-top: 30px;
+        padding: 8px 20px;
+        font-size: 1rem;
+        font-weight: bold; 
+        cursor: pointer;
+        background-color: #0000008f;
+        border-style: none;
+        border-radius: 15px;
+        transition: transform 0.4s ease-in-out; 
+    }
+}
